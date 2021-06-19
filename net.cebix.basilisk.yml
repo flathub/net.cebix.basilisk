@@ -15,7 +15,7 @@ modules:
   - name: BasiliskII
     buildsystem: autotools
     subdir: BasiliskII/src/Unix
-    #no-parallel-make: true
+    no-parallel-make: true
     config-opts:
       # JIT is currently incompatible with flatpak sandboxing
       - --disable-jit-compiler
