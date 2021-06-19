@@ -22,5 +22,5 @@ modules:
     sources:
       - type: git
         #branch: flatpak
-        commit: c1f47205fc7282d20102cc43912ac07cb91612d6
+        commit: b44192dd168d67a53b264c037bffb6da820ff86f
         url: https://github.com/SegHaxx/macemu-flatpak.git
