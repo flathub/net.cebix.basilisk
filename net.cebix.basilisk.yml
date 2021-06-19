@@ -17,9 +17,10 @@ modules:
     subdir: BasiliskII/src/Unix
     #no-parallel-make: true
     config-opts:
-      - --without-
+      # JIT is currently incompatible with flatpak sandboxing
+      - --disable-jit-compiler
     sources:
       - type: git
-        branch: flatpak
-        commit: 50858834cdae546a0fb3003e7fe3552096763848
+        #branch: flatpak
+        commit: c1f47205fc7282d20102cc43912ac07cb91612d6
         url: https://github.com/SegHaxx/macemu-flatpak.git
