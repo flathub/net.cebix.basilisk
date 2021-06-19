@@ -15,35 +15,11 @@ modules:
   - name: BasiliskII
     buildsystem: autotools
     subdir: BasiliskII/src/Unix
-    no-parallel-make: true
+    #no-parallel-make: true
     config-opts:
-      - --without-x
-      - --with-sdl2
-      - --enable-sdl-video
-      - --enable-sdl-audio
-    post-install:
-      - mkdir -p ${FLATPAK_DEST}/share/metainfo
-      - install -c -m 644 ../../../meta ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-      - mkdir -p ${FLATPAK_DEST}/share/applications
-      - install -c -m 644 ../../../desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - mkdir -p ${FLATPAK_DEST}/share/icons/hicolor/64x64/apps
-      - install -c -m 644 ../../../BasiliskII64.png ${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png
-      - mkdir -p ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps
-      - install -c -m 644 ../../../BasiliskII128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
+      - --without-
     sources:
       - type: git
-        #branch: flatpak
-        commit: 7d87addf2277614ce0f119ce55611024f03491ff
+        branch: flatpak
+        commit: 50858834cdae546a0fb3003e7fe3552096763848
         url: https://github.com/SegHaxx/macemu-flatpak.git
-      - type: file
-        path: net.cebix.basilisk.metainfo.xml
-        dest-filename: meta
-      - type: file
-        path: net.cebix.basilisk.desktop
-        dest-filename: desktop
-      - type: file
-        path: BasiliskII64.png
-        dest-filename: BasiliskII64.png
-      - type: file
-        path: BasiliskII128.png
-        dest-filename: BasiliskII128.png
