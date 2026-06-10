@@ -28,6 +28,8 @@ modules:
       - BasiliskII/COPYING
     sources:
       - type: git
+        url: https://github.com/SegHaxx/macemu-flatpak.git
         #branch: flatpak
         commit: f3295d824e863d2244b18f913586ea15880d571a
-        url: https://github.com/SegHaxx/macemu-flatpak.git
+      - type: patch
+        path: fix-appdata.patch

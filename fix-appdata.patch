@@ -1,0 +1,37 @@
+From 47307927ac29a59b8ad12da7df3439d04f6cd3d8 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Wed, 10 Jun 2026 16:41:46 +0300
+Subject: [PATCH] Fix appdata paper cuts
+
+Signed-off-by: Sabri Ünal <yakushabb@gmail.com>
+---
+ BasiliskII/src/Unix/flatpak/net.cebix.basilisk.metainfo.xml | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/BasiliskII/src/Unix/flatpak/net.cebix.basilisk.metainfo.xml b/BasiliskII/src/Unix/flatpak/net.cebix.basilisk.metainfo.xml
+index b880821..1727681 100644
+--- a/BasiliskII/src/Unix/flatpak/net.cebix.basilisk.metainfo.xml
++++ b/BasiliskII/src/Unix/flatpak/net.cebix.basilisk.metainfo.xml
+@@ -15,13 +15,18 @@ Basilisk II is an Open Source 68k Macintosh emulator. That is, it enables you to
+ 
+   <url type="homepage">https://basilisk.cebix.net/</url>
+   <url type="bugtracker">https://github.com/SegHaxx/macemu-flatpak/issues</url>
++  <url type="vcs-browser">https://github.com/SegHaxx/macemu-flatpak</url>
++  <developer id="net.cebix">
++    <name>Christian Bauer</name>
++  </developer>
+ 
+   <launchable type="desktop-id">net.cebix.basilisk.desktop</launchable>
+ 
+   <screenshots>
+     <screenshot type="default">
+       <image>https://raw.githubusercontent.com/flathub/net.cebix.basilisk/master/screenshots/1.png</image>
+-    </screenshot><screenshot>
++    </screenshot>
++    <screenshot>
+       <image>https://raw.githubusercontent.com/flathub/net.cebix.basilisk/master/screenshots/2.png</image>
+     </screenshot>
+   </screenshots>
+--
+libgit2 1.7.2
+
