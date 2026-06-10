@@ -1,6 +1,6 @@
 app-id: net.cebix.basilisk
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: BasiliskII
 finish-args:
@@ -16,13 +16,19 @@ modules:
 
   # required for FPU implementation on ARM
   - name: mpfr
-    only-arches: [arm,aarch64]
+    only-arches:
+      - arm
+      - aarch64
     config-opts:
       - --disable-static
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.1.0.tar.xz
-        sha256: 0c98a3f1732ff6ca4ea690552079da9c597872d30e96ec28414ee23c95558a7f
+        url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz
+        sha256: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+        x-checker-data:
+          type: anitya
+          project-id: 2019
+          url-template: https://ftp.gnu.org/gnu/mpfr/mpfr-$version.tar.xz
 
   - name: BasiliskII
     buildsystem: autotools
@@ -32,7 +38,12 @@ modules:
       # VOSF crashes on Ubuntu
       - --disable-vosf
     sources:
-      - type: git
-        #branch: flatpak
-        commit: f3295d824e863d2244b18f913586ea15880d571a
-        url: https://github.com/SegHaxx/macemu-flatpak.git
+      - type: archive
+        url: https://api.github.com/repos/SegHaxx/macemu-flatpak/tarball/2.8.6
+        dest-filename: macemu-flatpak.tar.gz
+        sha256: cc77a74153e3d29301e8343154adcca6b6a2f095dee166038253f558a759e855
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/SegHaxx/macemu-flatpak/releases/latest
+          version-query: .tag_name
+          url-query: .tarball_url
