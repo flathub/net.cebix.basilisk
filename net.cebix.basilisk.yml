@@ -21,6 +21,7 @@ modules:
     config-opts:
       # VOSF crashes on Ubuntu
       - --disable-vosf
+      - --with-bincue
     license-files:
       - BasiliskII/COPYING
     sources:
