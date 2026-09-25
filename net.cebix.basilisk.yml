@@ -31,6 +31,8 @@ modules:
     config-opts:
       # VOSF crashes on Ubuntu
       - --disable-vosf
+    license-files:
+      - BasiliskII/COPYING
     sources:
       - type: git
         #branch: flatpak
